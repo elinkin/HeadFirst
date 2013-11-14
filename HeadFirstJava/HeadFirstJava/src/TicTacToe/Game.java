@@ -5,12 +5,13 @@ import java.util.Scanner;
 
 public class Game {
 	
-	private Mark[][] board = new Mark[BOARD_SIZE][BOARD_SIZE];
 	private static final int BOARD_SIZE = 3;
+
+	private Mark[][] board = new Mark[BOARD_SIZE][BOARD_SIZE];
 	private PlayerTypes currentPlayer = PlayerTypes.NONE;
 	private PlayerTypes winner = PlayerTypes.NONE;
 	private int piecesOnBoard = 0;
-
+	
 	public Game() {
 		
 		for (int currRow = 0; currRow < board.length; ++currRow) {
@@ -110,6 +111,7 @@ public class Game {
 		System.out.println("Make your move!");
 
 		do {
+		// let the user set the cell
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Enter coordinates, human [X Y]: ");
 		int move_row = scanner.nextInt() - 1;
@@ -129,20 +131,7 @@ public class Game {
 		currentPlayer = PlayerTypes.values()[1 - currentPlayer.ordinal()];
 	}
 	
-public void paint() {
-    for (int row = 0; row < BOARD_SIZE; ++row) {
-       for (int col = 0; col < BOARD_SIZE; ++col) {
-    	   board[row][col].paint();   // each cell paints itself
-          if (col < BOARD_SIZE - 1) System.out.print("|");
-       }
-       System.out.println();
-       if (row < BOARD_SIZE - 1) {
-          System.out.println("-----------");
-       }
-    }
- }
-	
-	/*private String separatorLineToString() {
+	private String separatorLineToString() {
 		String result = "";
 		
 		// draw the line
@@ -173,6 +162,6 @@ public void paint() {
 		}
 
 		return result;
-	}*/
+	}
 	
 }

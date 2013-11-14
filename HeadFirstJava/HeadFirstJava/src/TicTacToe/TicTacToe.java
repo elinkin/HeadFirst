@@ -9,7 +9,6 @@ public class TicTacToe {
 		do {
 			game.playMove();
 			System.out.println(game);
-			game.paint();
 			game.switchTurns();
 		} while (!game.isGameOver());
 		
