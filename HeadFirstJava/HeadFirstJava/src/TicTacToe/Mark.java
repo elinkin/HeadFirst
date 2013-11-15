@@ -1,5 +1,5 @@
 package TicTacToe;
 
 public enum Mark {
-	EMPTY, CROSS, NOUGHT
+	EMPTY, CROSS, NOUGHT;
 }
